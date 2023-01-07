@@ -1,0 +1,32 @@
+bhyve_reggae1()
+{
+	vm_ram="4g"
+	vm_cpus="2"
+	imgsize="20g"
+	vm_os_type="freebsd"
+	#vm_os_profile="cloud-FreeBSD-ufs-x64-13.1"
+	vm_os_profile="cloud-FreeBSD-zfs-x64-13.1"
+
+	ip4_addr="10.0.100.144"
+	ip4_gw="10.0.100.1"
+
+	ci_jname="${jname}"
+	ci_fqdn="${fqdn}"
+	ci_ip4_addr="${ip4_addr}"
+	ci_gw4="${ip4_gw}"
+
+	#interface="vpc-vpc1"
+	#ci_interface_mtu="1450"
+	imgtype="zvol"
+	astart=0
+	ssh_wait=1
+}
+
+postcreate_reggae1()
+{
+	bscp prepare.sh ${jname}:prepare.sh
+
+	bexec << EOF
+sudo /home/freebsd/prepare.sh
+EOF
+}
