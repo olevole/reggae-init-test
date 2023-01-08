@@ -1,7 +1,9 @@
 
 Reggae init test regression
 
-Please edit CBSDfile vm_os_profile/settings or overwrite via command line:
+Use `cbsd up` to start VM.
+
+Most likely you will want to edit some values in CBSDfile (e.g. vm_os_profile/network settings ..). You can overwrite it via command line as well:
 
 ```
 cbsd up vm_os_profile="cloud-FreeBSD-ufs-x64-13.1" ip4_addr="10.0.0.2"
