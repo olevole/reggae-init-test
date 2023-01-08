@@ -27,6 +27,6 @@ postcreate_reggae1()
 	bscp prepare.sh ${jname}:prepare.sh
 
 	bexec << EOF
-sudo /home/freebsd/prepare.sh
+sudo prepare.sh
 EOF
 }
